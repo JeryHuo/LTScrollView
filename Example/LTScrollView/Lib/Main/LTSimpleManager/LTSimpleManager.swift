@@ -97,6 +97,7 @@ public class LTSimpleManager: UIView {
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
         registerCell(tableView, UITableViewCell.self)
         return tableView
     }()
@@ -279,6 +280,9 @@ extension LTSimpleManager: UITableViewDataSource, LTTableViewProtocal {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cellWithTableView(tableView)
         cell.selectionStyle = .none
+        cell.contentView.backgroundColor = .clear
+        cell.backgroundView?.backgroundColor = .clear
+        cell.backgroundColor = .clear
         if layout.isHovered {
             pageView.addSubview(titleView)
         }
